@@ -1,5 +1,9 @@
 return {
   {
+    'tpope/vim-sleuth',
+  },
+
+  {
     'christoomey/vim-tmux-navigator',
     cmd = {
       'TmuxNavigateLeft',
@@ -43,6 +47,7 @@ return {
   {
     'ThePrimeagen/harpoon',
     branch = 'harpoon2',
+    dependencies = { 'nvim-lua/plenary.nvim' },
     opts = {
       menu = {
         width = vim.api.nvim_win_get_width(0) - 4,
@@ -96,6 +101,50 @@ return {
     dependencies = {
       'MunifTanjim/nui.nvim',
       'rcarriga/nvim-notify',
+    },
+  },
+
+  {
+    'folke/todo-comments.nvim',
+    event = 'VimEnter',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    opts = { signs = false },
+  },
+
+  {
+    'nvim-lualine/lualine.nvim',
+    dependencies = {
+      { 'yavorski/lualine-macro-recording.nvim' },
+    },
+    event = 'VeryLazy',
+    opts = {
+      options = {
+        icons_enabled = true,
+        theme = 'auto',
+        globalstatus = true,
+        component_separators = { left = '', right = '' },
+        section_separators = { left = '', right = '' },
+        disabled_filetypes = {},
+        always_divide_middle = true,
+      },
+      sections = {
+        lualine_a = { { 'mode', icon = '' } },
+        lualine_b = { 'branch', 'diff', 'diagnostics' },
+        lualine_c = { 'filename', 'macro_recording' },
+        lualine_x = { 'encoding', 'filetype' },
+        lualine_y = { 'progress' },
+        lualine_z = { 'location' },
+      },
+      inactive_sections = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = { 'filename' },
+        lualine_x = { 'location' },
+        lualine_y = {},
+        lualine_z = {},
+      },
+      tabline = {},
+      extensions = { 'neo-tree' },
     },
   },
 }
