@@ -21,5 +21,6 @@ require('lazy').setup {
   spec = {
     { import = 'plugins.core' },
     { import = 'plugins' },
+    { import = 'plugins.languages' },
   },
 }
