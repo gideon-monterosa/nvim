@@ -1,6 +1,7 @@
 return {
   {
     'tpope/vim-sleuth',
+    event = { 'BufReadPre', 'BufNewFile' },
   },
 
   {
@@ -21,6 +22,7 @@ return {
 
   {
     'stevearc/oil.nvim',
+    cmd = { 'Oil' },
     ---@module 'oil'
     ---@type oil.SetupOpts
     opts = {},
@@ -47,6 +49,7 @@ return {
   {
     'ThePrimeagen/harpoon',
     branch = 'harpoon2',
+    event = 'VeryLazy',
     dependencies = { 'nvim-lua/plenary.nvim' },
     opts = {
       menu = {

@@ -2,10 +2,11 @@
 return {
   {
     'folke/snacks.nvim',
+    event = 'VeryLazy',
+    priority = 1000,
     dependencies = {
       { 'folke/todo-comments.nvim' },
     },
-    priority = 1000,
     lazy = false,
     ---@type snacks.Config
     opts = {
