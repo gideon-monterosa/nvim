@@ -77,6 +77,19 @@ return {
           single_file_support = true,
         },
 
+        pyright = {
+          settings = {
+            python = {
+              analysis = {
+                typeCheckingMode = 'basic',
+                autoSearchPaths = true,
+                useLibraryCodeForTypes = true,
+                diagnosticMode = 'workspace',
+              },
+            },
+          },
+        },
+
         -- denols = {
         --   root_dir = require('lspconfig').util.root_pattern('deno.json', 'deno.jsonc'),
         --   init_options = {
@@ -92,14 +105,17 @@ return {
         -- LSP
         'lua-language-server',
         'clangd',
+        'pyright',
         -- 'denols',
 
         -- Formaters
         'stylua',
         'prettierd',
+        'black',
 
         -- Linter
         'eslint_d',
+        'flake8',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -169,6 +185,7 @@ return {
       lint.linters_by_ft = {
         markdown = { 'markdownlint' },
         javascript = { 'eslint_d' },
+        python = { 'flake8' },
       }
 
       -- To allow other plugins to add linters to require('lint').linters_by_ft,

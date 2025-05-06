@@ -4,12 +4,12 @@ return {
     ft = { 'markdown' },
     keys = {
       { '<leader>ts', ':Markview splitToggle<CR>', desc = 'Toggle Split' },
+      { '<leader>tp', ':Markview toggle<CR>', desc = 'Toggle Preview' },
     },
   },
 
   {
     'nfrid/markdown-togglecheck',
-    lazy = false,
     dependencies = { 'nfrid/treesitter-utils' },
     ft = { 'markdown' },
     keys = {
